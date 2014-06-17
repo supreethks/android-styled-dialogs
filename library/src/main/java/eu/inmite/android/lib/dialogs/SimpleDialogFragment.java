@@ -35,10 +35,10 @@ import android.view.View;
  */
 public class SimpleDialogFragment extends BaseDialogFragment {
 
-	protected static String ARG_MESSAGE = "message";
-	protected static String ARG_TITLE = "title";
-	protected static String ARG_POSITIVE_BUTTON = "positive_button";
-	protected static String ARG_NEGATIVE_BUTTON = "negative_button";
+	protected final static String ARG_MESSAGE = "message";
+	protected final static String ARG_TITLE = "title";
+	protected final static String ARG_POSITIVE_BUTTON = "positive_button";
+	protected final static String ARG_NEGATIVE_BUTTON = "negative_button";
 
 	protected int mRequestCode;
 
@@ -136,9 +136,6 @@ public class SimpleDialogFragment extends BaseDialogFragment {
 			if (targetFragment instanceof ISimpleDialogListener) {
 				return (ISimpleDialogListener) targetFragment;
 			}
-		} else if (getParentFragment() != null
-				&& getParentFragment() instanceof ISimpleDialogListener) {
-			return (ISimpleDialogListener) getParentFragment();
 		} else {
 			if (getActivity() instanceof ISimpleDialogListener) {
 				return (ISimpleDialogListener) getActivity();
@@ -153,9 +150,6 @@ public class SimpleDialogFragment extends BaseDialogFragment {
 			if (targetFragment instanceof ISimpleDialogCancelListener) {
 				return (ISimpleDialogCancelListener) targetFragment;
 			}
-		} else if (getParentFragment() != null
-				&& getParentFragment() instanceof ISimpleDialogCancelListener) {
-			return (ISimpleDialogCancelListener) getParentFragment();
 		} else {
 			if (getActivity() instanceof ISimpleDialogCancelListener) {
 				return (ISimpleDialogCancelListener) getActivity();
@@ -212,21 +206,10 @@ public class SimpleDialogFragment extends BaseDialogFragment {
 			return this;
 		}
 
-		public SimpleDialogBuilder setHtmlMessage(int htmlMessageResourceId) {
-			mMessage = mContext.getText(htmlMessageResourceId);
-			return this;
-		}
-
-		public SimpleDialogBuilder setHtmlMessage(String htmlMessage) {
-			mMessage = Html.fromHtml(htmlMessage);
-			return this;
-		}
-
 		public SimpleDialogBuilder setPositiveButtonText(int textResourceId) {
 			mPositiveButtonText = mContext.getString(textResourceId);
 			return this;
 		}
-
 
 		public SimpleDialogBuilder setPositiveButtonText(String text) {
 			mPositiveButtonText = text;

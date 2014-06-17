@@ -14,17 +14,22 @@ Features:
 
 ## How to include it in your project:
 
+With Gradle:
+```groovy
+compile 'eu.inmite.android.lib:android-styled-dialogs:1.1.2@aar'
+```    
+
 With Maven:
 ```xml
 <dependency>
 	<groupId>eu.inmite.android.lib</groupId>
 	<artifactId>android-styled-dialogs</artifactId>
-	<version>1.0.1</version>
+	<version>1.1.2</version>
 	<type>apklib</type>
 </dependency>
 ```
 
-Or:
+Manually:
 
  - clone the project
  - add it as library project in your IDE
@@ -98,3 +103,11 @@ The library could be improved with more common dialogs. Pull requests are encour
  - edittext dialog
  - password dialog
  - ...
+
+## Why 'Dialogs'?
+
+<img src="http://img.radio.cz/pictures/osobnosti/cimrman_jarax.jpg" width="70"  align="right"/>
+
+Theodor Dialogs was a famous Czech painter, uncle of [Jára Cimrman](http://en.wikipedia.org/wiki/J%C3%A1ra_Cimrman). Jára Cimrman was a playwright, philosopher, inventor, teacher, poet, mathematician and more but he lacked painting skills. That's why Theodor was helping him with many projects. Just like Android and this library do.
+
+See [**our other Czech personalities**](http://inmite.github.io) who help with [#AndroidDev](https://plus.google.com/s/%23AndroidDev).
